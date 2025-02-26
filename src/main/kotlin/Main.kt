@@ -1,6 +1,8 @@
 package org.example
 
 import org.example.engine.*
+import java.nio.file.Files
+import java.nio.file.Paths
 
 
 class Game : IAppLogic {
@@ -10,11 +12,19 @@ class Game : IAppLogic {
         this
     )
 
-    override fun cleanUp() {
-
-    }
 
     override fun init(window: Window, scene: Scene, render: Render) {
+        val positions = arrayOf<Float>(
+            0f, 0.5f, 0f,
+            -0.5f, -0.5f, 0.0f,
+            0.5f, -0.5f, 0f
+        )
+
+        val mesh = Mesh(positions, 3)
+        scene.addMesh("triangle", mesh)
+    }
+
+    override fun cleanUp() {
 
     }
 
@@ -30,6 +40,7 @@ class Game : IAppLogic {
 
 
 fun main() {
+
     val game = Game()
     game.gameEng.start()
 }
