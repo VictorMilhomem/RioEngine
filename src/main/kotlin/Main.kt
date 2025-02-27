@@ -1,8 +1,6 @@
 package org.example
 
 import org.example.engine.*
-import java.nio.file.Files
-import java.nio.file.Paths
 
 
 class Game : IAppLogic {
@@ -14,14 +12,23 @@ class Game : IAppLogic {
 
 
     override fun init(window: Window, scene: Scene, render: Render) {
-        val positions = arrayOf<Float>(
-            0f, 0.5f, 0f,
+        val positions = floatArrayOf(
+            -0.5f, 0.5f, 0.0f,
             -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0f
+            0.5f, -0.5f, 0.0f,
+            0.5f, 0.5f, 0.0f,
         )
-
-        val mesh = Mesh(positions, 3)
-        scene.addMesh("triangle", mesh)
+        val colors = floatArrayOf(
+            0.5f, 0.0f, 0.0f,
+            0.0f, 0.5f, 0.0f,
+            0.0f, 0.0f, 0.5f,
+            0.0f, 0.5f, 0.5f,
+        )
+        val indices = intArrayOf(
+            0, 1, 3, 3, 1, 2,
+        )
+        val mesh = Mesh(positions, colors, indices)
+        scene.addMesh("quad", mesh)
     }
 
     override fun cleanUp() {

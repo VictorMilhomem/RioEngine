@@ -38,9 +38,6 @@ class ShaderProgram(
             throw RuntimeException("Error creating shader. Type: $shaderType")
         }
 
-        println("Compiling shader of type: $shaderType")
-        println("Shader code:\n$shaderCode")
-
         glShaderSource(shaderId, shaderCode)
         glCompileShader(shaderId)
 

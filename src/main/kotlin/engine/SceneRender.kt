@@ -19,7 +19,7 @@ class SceneRender {
         shaderProgram.bind()
         scene.getMeshMap().values.forEach{
             mesh -> glBindVertexArray(mesh.getVaoId())
-            glDrawArrays(GL_TRIANGLES, 0, mesh.numVertices)
+            glDrawElements(GL_TRIANGLES, mesh.numVertices, GL_UNSIGNED_INT, 0)
         }
 
         glBindVertexArray(0)
