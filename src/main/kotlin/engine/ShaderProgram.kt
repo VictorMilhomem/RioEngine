@@ -21,6 +21,10 @@ class ShaderProgram(
         link(shaderModules)
     }
 
+    fun getProgramId() : Int{
+        return programId
+    }
+
     fun bind() {
         glUseProgram(programId)
     }

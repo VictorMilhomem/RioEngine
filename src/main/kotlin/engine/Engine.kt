@@ -10,7 +10,7 @@ class Engine(windowTitle: String, opts: WindowOptions, private val appLogic: IAp
     })
     private var render = Render()
     private var running: Boolean
-    private var scene = Scene()
+    private var scene = Scene(window.getWidth(), window.getHeight())
     private val targetFps = opts.fps
     private val targetUps = opts.ups
 
@@ -31,7 +31,7 @@ class Engine(windowTitle: String, opts: WindowOptions, private val appLogic: IAp
     }
 
     private fun resize() {
-
+        scene.resize(window.getWidth(), window.getHeight())
     }
 
     fun start() {

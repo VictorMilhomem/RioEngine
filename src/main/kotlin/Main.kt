@@ -13,10 +13,10 @@ class Game : IAppLogic {
 
     override fun init(window: Window, scene: Scene, render: Render) {
         val positions = floatArrayOf(
-            -0.5f, 0.5f, 0.0f,
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.5f, 0.5f, 0.0f,
+            -0.5f, 0.5f, -3.0f,
+            -0.5f, -0.5f, -3.0f,
+            0.5f, -0.5f, -3.0f,
+            0.5f, 0.5f, -3.0f,
         )
         val colors = floatArrayOf(
             0.5f, 0.0f, 0.0f,
